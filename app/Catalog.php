@@ -17,6 +17,12 @@ protected $fillable = [
  protected $table = 'catalogs';
 
 
+public function scopeActive($query){
+
+return $query->where('active',1);
+
+}
+
  public function products()
     {
         return $this->hasMany('App\Product');

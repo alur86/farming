@@ -16,8 +16,8 @@
 </div>
 
 <div class="row">
-  <div class="col-xs-12 col-sm-12 col-md-12">
-        <div class="form-group">
+<div class="col-xs-12 col-sm-12 col-md-12">
+<div class="form-group">
            
 <strong>Product Catalog:</strong>
  <select name="catalog_id">
@@ -30,27 +30,27 @@
  </div>
 
 
-  <div class="col-xs-12 col-sm-12 col-md-12">
-        <div class="form-group">
-            <strong>Product Name:</strong>
-           {{$product->name}}
-        </div>
-    </div>
-        <div class="col-xs-12 col-sm-12 col-md-12">
-        <div class="form-group">
-            <strong>Product Description:</strong>
-            {{$product->description}}
-        </div>
-    </div>
+<div class="col-xs-12 col-sm-12 col-md-12">
+<div class="form-group">
+<strong>Product Name:</strong>
+{{$product->name}}
+</div>
+</div>
+<div class="col-xs-12 col-sm-12 col-md-12">
+<div class="form-group">
+<strong>Product Description:</strong>
+{{$product->description}}
+</div>
+</div>
    
-    <div class="col-xs-12 col-sm-12 col-md-12">
-        <div class="form-group">
-            <strong>Quantity:</strong>
-              {{$product->quantity}}
-        </div>
-    </div>
-
+<div class="col-xs-12 col-sm-12 col-md-12">
+<div class="form-group">
+<strong>Quantity:</strong>
+{{$product->quantity}}
+</div>
+</div>
 
 
 </div>
+
 @endsection

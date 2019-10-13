@@ -30,16 +30,19 @@
 
 <form class="form-horizontal" role="form" method="POST" action="{{ url('/editedproduct') }}">
 <input id="product_id" type="hidden" class="form-control" name="product_id" value="{{$product->id}}">
-  {{ csrf_field() }}
+
+{{ csrf_field() }}
 
 <div class="form-group{{ $errors->has('catalog_id') ? ' has-error' : '' }}">
 <label for="catalog_id" class="col-md-4 control-label">Catalog of Fields</label>
 <div class="col-md-6">
 <select name="catalog_id">
 <option selected disabled>Select...</option>
+
 @foreach($catalogs as $catalog)
 <option value="{{ $catalog->id }}"selected>{{ $catalog->name }}</option>
 @endforeach
+
 </select>  
 @if ($errors->has('catalog_id'))
 <span class="help-block">
@@ -59,8 +62,10 @@
 <strong>{{ $errors->first('name') }}</strong>
 </span>
  @endif
- </div>
 </div>
+</div>
+
+
 
 <div class="form-group{{ $errors->has('description') ? ' has-error' : '' }}">
 <label for="description" class="col-md-4 control-label">Description</label>
@@ -70,8 +75,8 @@
 <span class="help-block">
 <strong>{{ $errors->first('description') }}</strong>
 </span>
- @endif
- </div>
+@endif
+</div>
 </div>
 
 

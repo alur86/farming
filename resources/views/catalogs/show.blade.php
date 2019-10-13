@@ -27,13 +27,29 @@
            {{$catalog->name}}
         </div>
     </div>
-        <div class="col-xs-12 col-sm-12 col-md-12">
-        <div class="form-group">
+
+  <div class="col-xs-12 col-sm-12 col-md-12">
+      <div class="form-group">
+            <strong>Catalog Status:</strong>
+            
+       @if ($catalog->active==1)
+            activated
+               @else 
+           deactivated
+         @endif
+
+        </div>
+    </div
+
+    <div class="col-xs-12 col-sm-12 col-md-12">
+     <div class="form-group">
             <strong>Catalog Description:</strong>
             {{$catalog->description}}
-        </div>
+    </div>
     </div>
    
+
+
     <div class="col-xs-12 col-sm-12 col-md-12">
         <div class="form-group">
             <strong>Catalog Type:</strong>

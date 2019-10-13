@@ -29,7 +29,9 @@
 
 
 <form class="form-horizontal" role="form" method="POST" action="{{ url('/addedcatalog') }}">
+
  {{ csrf_field() }}
+
 <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
 <label for="name" class="col-md-4 control-label">Catalog Name</label>
 <div class="col-md-6">
@@ -54,6 +56,29 @@
  @endif
  </div>
 </div>
+
+
+
+
+<div class="form-group{{ $errors->has('active') ? ' has-error' : '' }}">
+<label for="active" class="col-md-4 control-label">Catalog of status</label>
+<div class="col-md-6">
+<select name="active">
+<option selected disabled>Select...</option>
+<option value="0" >deactivated</option>
+<option value="1" selected>activated</option>
+</select>  
+@if ($errors->has('active'))
+<span class="help-block">
+<strong>{{ $errors->first('active') }}</strong>
+</span>
+ @endif
+ </div>
+</div>
+
+
+
+
 
 
 <div class="form-group{{ $errors->has('description') ? ' has-error' : '' }}">

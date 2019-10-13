@@ -30,7 +30,8 @@
 
 <form class="form-horizontal" role="form" method="POST" action="{{ url('/editedcatalog') }}">
 <input id="catalog_id" type="hidden" class="form-control" name="catalog_id" value="{{$catalog->id}}">
-  {{ csrf_field() }}
+
+{{ csrf_field() }}
 
 <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
 <label for="name" class="col-md-4 control-label">Catalog Name</label>
@@ -58,17 +59,37 @@
 </div>
 
 
+<div class="form-group{{ $errors->has('active') ? ' has-error' : '' }}">
+<label for="active" class="col-md-4 control-label">Catalog of status</label>
+<div class="col-md-6">
+<select name="active">
+<option selected disabled>Select...</option>
+<option value="0" >deactivated</option>
+<option value="1" selected>activated</option>
+</option>
+
+
+</select>  
+@if ($errors->has('active'))
+<span class="help-block">
+<strong>{{ $errors->first('active') }}</strong>
+</span>
+ @endif
+ </div>
+</div>
+
+
 
 <div class="form-group{{ $errors->has('description') ? ' has-error' : '' }}">
 <label for="description" class="col-md-4 control-label">Description</label>
 <div class="col-md-6">
 <textarea class="form-control" rows="5" class="form-control" name="description">{{$catalog->description}}</textarea>
-@if ($errors->has('supplier_description'))
+@if ($errors->has('description'))
 <span class="help-block">
 <strong>{{ $errors->first('description') }}</strong>
 </span>
  @endif
- </div>
+</div>
 </div>
 
 
@@ -76,14 +97,14 @@
 <div class="form-group">
 <div class="col-md-6 col-md-offset-4">
 <button type="submit" class="btn btn-primary">
- <i class="fa fa-btn fa-user"></i> Update
+<i class="fa fa-btn fa-user"></i> Update
 </button>
 </div>
 </div>
-       </div>
-                </div>
-            </div>
-                    </div>
+</div>
+</div>
+</div>
+</div>
    
 @endsection
 
